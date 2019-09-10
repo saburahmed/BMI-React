@@ -1,51 +1,82 @@
-.App {
-  text-align: left;
-  width:1024px;
-  margin: 30px auto;
+@import url("https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", cursive;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App {
+  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  border: 5px solid rgba(25, 255, 214);
+  background-color: rgb(22, 23, 46);
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  background-color: rgba(25, 255, 214);
+  align-content: center;
+  height: 10%;
+  padding-left: 20px;
+  color: rgba(22, 23, 46);
 }
 
 .App-intro {
   font-size: large;
 }
 
-form{
-
+form {
   margin: 10px;
-
 }
-label, input{
+
+label,
+input {
   display: block;
   margin: 10px;
+  font-size: 19px;
+  color: rgb(221, 222, 226);
 }
 
-input{
-
+input {
   padding: 10px 3px;
-   
+  font-size: 20px;
 }
 
-input[type='submit']{
-  padding: 10px 20px;
+.value-input {
+  color: rgb(154, 156, 167);
   border-radius: 5px;
-  background: #DDDDDD;
-  color: #000000;
+  border: none;
+  background-color: rgb(32, 33, 55);
+  font-weight: bold;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding: 10px 20px;
+  border-radius: 15px;
+  background: rgba(25, 255, 214);
+  color: rgba(22, 23, 46);
+  font-size: 25px;
+  font-weight: bold;
   border: none;
   cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/* .button {
+  background: rgba(231, 190, 7, 0.938);
+} */
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
