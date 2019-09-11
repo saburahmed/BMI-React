@@ -36,19 +36,23 @@ class App extends Component {
   }
 
   calculateBMI() {
-    var heightSquared = ((this.state.height / 100) * this.state.height) / 100;
-    var bmi = this.state.weight / heightSquared;
-    var low = Math.round(18.5 * heightSquared);
-    var high = Math.round(24.99 * heightSquared);
-    var message = "";
+    let heightSquared = ((this.state.height / 100) * this.state.height) / 100;
+    let bmi = this.state.weight / heightSquared;
+    let low = Math.round(18.5 * heightSquared);
+    let high = Math.round(24.99 * heightSquared);
+    let message = "";
     if (bmi >= 18.5 && bmi <= 24.99) {
-      message = "You are in a Healthy weight range";
+      message =
+        "You are in a Healthy weight range. By maintaining a healthy weight, you lower your risk of developing serious health problems";
     } else if (bmi >= 25 && bmi <= 29.9) {
-      message = "You are Overweight";
+      message =
+        "You are Overweight! Your health may be at risk if you don't loose weight. You are recommended to talk to your Doctor or Dietician for advice.";
     } else if (bmi >= 30) {
-      message = "You are Obese";
+      message =
+        "You are Obese! Your health may be at risk if you don't loose weight. You are recommended to talk to your Doctor or Dietician for advice.";
     } else if (bmi < 18.5) {
-      message = "You are Underweight";
+      message =
+        "You are Underweight, so you may need to put on some weight. You are recommended to ask your Doctor or Dietician for advice.";
     }
     this.setState({ message: message });
     this.setState({
@@ -125,7 +129,7 @@ class App extends Component {
           <div className="btn-wrapper">
             <input className="button" type="submit" value="Calculate" />
             <center>
-            <input className="button" type="reset" value="Reset" />
+              <input className="button" type="reset" value="Reset" />
             </center>
           </div>
         </form>
