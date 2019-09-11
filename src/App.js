@@ -30,6 +30,7 @@ class App extends Component {
   blur(e) {
     this.calculateBMI();
   }
+
   weightchange(e) {
     this.setState({ weight: e.target.value });
     e.preventDefault();
@@ -88,51 +89,55 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>THE BMI CHECKER</h1>
-          <p>Let's help you get your BMI Status</p>
-        </div>
-        <form onSubmit={this.submitMe}>
-          <label>Please enter your name</label>
-          <input
-            className="value-input"
-            type="text"
-            name="name"
-            value={this.state.name}
-            onBlur={this.blur}
-            onChange={this.change}
-          />
-          <label>Enter your height in cm:</label>
-          <input
-            className="value-input"
-            type="text"
-            name="height"
-            value={this.state.height}
-            onBlur={this.blur}
-            onChange={this.heightchange}
-          />
-          <label>Enter your weight in kg:</label>
-          <input
-            className="value-input"
-            type="text"
-            name="weight"
-            value={this.state.weight}
-            onChange={this.weightchange}
-          />
-          <label>
-            Hello {this.state.name}, your BMI as at {this.state.time} is{" "}
-            {this.state.bmi}
-          </label>
-          <label>{this.state.message}</label>
-          <label>{this.state.optimalweight}</label>
-          <div className="btn-wrapper">
-            <input className="button" type="submit" value="Calculate" />
-            <center>
-              <input className="button" type="reset" value="Reset" />
-            </center>
+      <div className="app-container">
+        <div className="App">
+          <div className="App-header">
+            <h1>THE BMI CHECKER</h1>
+            <p>Let's help you get your BMI Status</p>
           </div>
-        </form>
+          <form onSubmit={this.submitMe}>
+            <label>Please enter your name</label>
+            <input
+              className="value-input"
+              type="text"
+              name="name"
+              value={this.state.name}
+              onBlur={this.blur}
+              onChange={this.change}
+            />
+            <label>Enter your height in cm:</label>
+            <input
+              className="value-input"
+              type="text"
+              name="height"
+              value={this.state.height}
+              onBlur={this.blur}
+              onChange={this.heightchange}
+            />
+            <label>Enter your weight in kg:</label>
+            <input
+              className="value-input"
+              type="text"
+              name="weight"
+              value={this.state.weight}
+              onChange={this.weightchange}
+            />
+            <div className="result">
+              <label>
+                Hello {this.state.name}, your BMI as at {this.state.time} is{" "}
+                {this.state.bmi}
+              </label>
+              <label>{this.state.message}</label>
+              <label>{this.state.optimalweight}</label>              
+            </div>
+              <div className="btn-wrapper">
+                <input className="button" type="submit" value="Calculate" />
+                <center>
+                  <input className="button" type="reset" value="Reset" />
+                </center>
+              </div>
+          </form>
+        </div>
       </div>
     );
   }
