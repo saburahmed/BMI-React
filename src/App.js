@@ -5,13 +5,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Guest",
+      name: "User",
       weight: 0,
       height: 0,
       bmi: 0,
       message: "",
       optimalweight: "",
-      time: new Date().toLocaleTimeString()
+      time: new Date().toLocaleDateString()
     };
     this.submitMe = this.submitMe.bind(this);
     this.heightchange = this.heightchange.bind(this);
@@ -42,18 +42,23 @@ class App extends Component {
     var high = Math.round(24.99 * heightSquared);
     var message = "";
     if (bmi >= 18.5 && bmi <= 24.99) {
-      message = "You are in a healthy weight range";
+      message = "You are in a Healthy weight range";
     } else if (bmi >= 25 && bmi <= 29.9) {
-      message = "You are overweight";
+      message = "You are Overweight";
     } else if (bmi >= 30) {
-      message = "You are obese";
+      message = "You are Obese";
     } else if (bmi < 18.5) {
-      message = "You are under weight";
+      message = "You are Underweight";
     }
     this.setState({ message: message });
     this.setState({
       optimalweight:
-        "Your suggested weight range is between " + low + " - " + high
+        "Your suggested weight range is between " +
+        low +
+        "kg " +
+        " and " +
+        high +
+        "kg"
     });
     this.setState({ bmi: Math.round(bmi * 100) / 100 });
   }
@@ -113,9 +118,8 @@ class App extends Component {
             onChange={this.weightchange}
           />
           <label>
-            {this.state.checked} Hello {this.state.name}, How are you my friend?
-            It's currently {this.state.time} where you are living. Your BMI is{" "}
-            {this.state.bmi}{" "}
+            Hello {this.state.name}, your BMI as at {this.state.time} is{" "}
+            {this.state.bmi}
           </label>
           <label>{this.state.message}</label>
           <label>{this.state.optimalweight}</label>
