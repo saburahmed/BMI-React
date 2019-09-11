@@ -69,7 +69,7 @@ class App extends Component {
   }
 
   ticker() {
-    this.setState({ time: new Date().toLocaleTimeString() });
+    this.setState({ time: new Date().toLocaleDateString() });
   }
 
   componentDidMount() {
@@ -89,7 +89,6 @@ class App extends Component {
           <h1>THE BMI CHECKER</h1>
           <p>Let's help you get your BMI Status</p>
         </div>
-
         <form onSubmit={this.submitMe}>
           <label>Please enter your name</label>
           <input
@@ -123,9 +122,12 @@ class App extends Component {
           </label>
           <label>{this.state.message}</label>
           <label>{this.state.optimalweight}</label>
-
-          <input className="button" type="submit" value="Calculate" />
-          <input className="button" type="reset" value="Reset" />
+          <div className="btn-wrapper">
+            <input className="button" type="submit" value="Calculate" />
+            <center>
+            <input className="button" type="reset" value="Reset" />
+            </center>
+          </div>
         </form>
       </div>
     );
