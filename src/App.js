@@ -5,11 +5,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "User",
-      weight: 0,
-      height: 0,
+      name: "Joe Rex",
+      weight: "eg 60",
+      height: "eg 160",
       bmi: 0,
       message: "",
+
       optimalweight: "",
       time: new Date().toLocaleDateString()
     };
@@ -92,7 +93,7 @@ class App extends Component {
       <div className="app-container">
         <div className="App">
           <div className="App-header">
-            <h1>THE BMI CHECKER</h1>
+            <h2>THE BMI CHECKER</h2>
             <p>Let's help you get your BMI Status</p>
           </div>
           <form onSubmit={this.submitMe}>
@@ -101,6 +102,7 @@ class App extends Component {
               className="value-input"
               type="text"
               name="name"
+              placeholder="eg Joe Rex"
               value={this.state.name}
               onBlur={this.blur}
               onChange={this.change}
@@ -110,6 +112,7 @@ class App extends Component {
               className="value-input"
               type="text"
               name="height"
+              placeholder="eg 160"
               value={this.state.height}
               onBlur={this.blur}
               onChange={this.heightchange}
@@ -119,6 +122,7 @@ class App extends Component {
               className="value-input"
               type="text"
               name="weight"
+              placeholder="eg 60"
               value={this.state.weight}
               onChange={this.weightchange}
             />
@@ -127,15 +131,14 @@ class App extends Component {
                 Hello {this.state.name}, your BMI as at {this.state.time} is{" "}
                 {this.state.bmi}
               </label>
+
               <label>{this.state.message}</label>
-              <label>{this.state.optimalweight}</label>              
+
+              <label>{this.state.optimalweight}</label>
             </div>
-              <div className="btn-wrapper">
-                <input className="button" type="submit" value="Calculate" />
-                <center>
-                  <input className="button" type="reset" value="Reset" />
-                </center>
-              </div>
+            <div className="btn-wrapper">
+              <input className="button" type="submit" value="Calculate" />
+            </div>
           </form>
         </div>
       </div>
@@ -144,3 +147,11 @@ class App extends Component {
 }
 
 export default App;
+
+// <center>
+//   <input className="button" type="reset" value="Reset" />
+// </center>;
+
+// <div className="btn-wrapper">
+// <input className="button" type="submit" value="Calculate" />
+// </div>
