@@ -18,18 +18,12 @@ class App extends Component {
     this.heightchange = this.heightchange.bind(this);
     this.weightchange = this.weightchange.bind(this);
     this.change = this.change.bind(this);
-    this.ticker = this.ticker.bind(this);
-    this.blur = this.blur.bind(this);
     this.calculateBMI = this.calculateBMI.bind(this);
   }
 
   heightchange(e) {
     this.setState({ height: e.target.value });
     e.preventDefault();
-  }
-
-  blur(e) {
-    this.calculateBMI();
   }
 
   weightchange(e) {
@@ -74,14 +68,6 @@ class App extends Component {
     this.calculateBMI();
   }
 
-  ticker() {
-    this.setState({ time: new Date().toLocaleDateString() });
-  }
-
-  componentDidMount() {
-    setInterval(this.ticker, 60000);
-  }
-
   change(e) {
     e.preventDefault();
     console.log(e.target);
@@ -104,7 +90,6 @@ class App extends Component {
               name="name"
               placeholder="eg Joe Rex"
               value={this.state.name}
-              onBlur={this.blur}
               onChange={this.change}
             />
             <label>Enter your height in cm:</label>
@@ -114,7 +99,6 @@ class App extends Component {
               name="height"
               placeholder="eg 160"
               value={this.state.height}
-              onBlur={this.blur}
               onChange={this.heightchange}
             />
             <label>Enter your weight in kg:</label>
